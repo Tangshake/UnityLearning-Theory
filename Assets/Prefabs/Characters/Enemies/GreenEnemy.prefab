@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5167143392601077951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 1.04, z: -0.7200546}
+  m_LocalPosition: {x: 7, y: 1.04, z: 45}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   hitsToDestroy: 1
   target: {fileID: 0}
   destroyPositionZ: -50
-  currentHealth: 0
+  currentHit: 0
 --- !u!54 &5167143392601077950
 Rigidbody:
   m_ObjectHideFlags: 0
