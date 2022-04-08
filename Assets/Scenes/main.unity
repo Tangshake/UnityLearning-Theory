@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  health: 100
+  health: 1
   bullet: {fileID: 4442000345336183669, guid: eed64de19c46f304f8a53613734dcbc0, type: 3}
 --- !u!54 &289403522
 Rigidbody:
@@ -634,6 +634,7 @@ MonoBehaviour:
   - {fileID: 5167143392601077951, guid: 86612514274c0bc4bb3de5f1c9d64629, type: 3}
   - {fileID: 6141858111719558797, guid: 5e712164e6097cd4f99cda9ded9cacfe, type: 3}
   - {fileID: 2161720455116885073, guid: 093d751f3d14f6346a13aa69595841d9, type: 3}
+  ballExplode: {fileID: 3215898418010827947, guid: e2bd4c27dedd9974d9eb9800e50641c9, type: 3}
 --- !u!4 &1961304692
 Transform:
   m_ObjectHideFlags: 0

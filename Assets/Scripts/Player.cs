@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private float speed = 10.0f;
 
     [SerializeField]
-    private int health = 100;
+    private int health = 20;
 
     [SerializeField]
     private GameObject bullet;
