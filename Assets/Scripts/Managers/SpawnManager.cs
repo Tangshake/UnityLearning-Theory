@@ -16,7 +16,7 @@ public class SpawnManager : MonoBehaviour
     private void Start()
     {
         //StartCoroutine("SpawnEnemy");
-        InvokeRepeating("SpawnEnemy", 0, spawnRate);
+        StartEnemySpawn();
     }
 
     private void SpawnEnemy()
@@ -27,5 +27,14 @@ public class SpawnManager : MonoBehaviour
         Instantiate(lEnemies[enemyIndex], new Vector3(pos, 20, 48), Quaternion.identity);
     }
 
+    public void StartEnemySpawn()
+    {
+        InvokeRepeating("SpawnEnemy", 0, spawnRate);
+    }
+
+    public void StopEnemySpawn()
+    {
+        CancelInvoke("SpawnEnemy");
+    }
     
 }

@@ -61,4 +61,13 @@ public class Player : MonoBehaviour
             Debug.Log($"Current player health is {health}");
         }
     }
+
+
+    public int PlayerHealth
+    {
+        get
+        {
+            return health;
+        }
+    }
 }
