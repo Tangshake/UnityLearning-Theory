@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5167143392601077950}
   m_Layer: 0
   m_Name: GreenEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +113,9 @@ MonoBehaviour:
   moveSpeed: 5
   damageDone: 1
   hitsToDestroy: 1
+  target: {fileID: 0}
+  destroyPositionZ: -50
+  currentHealth: 0
 --- !u!54 &5167143392601077950
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6141858111719558796}
   m_Layer: 0
   m_Name: RedEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,9 +110,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: RedEnemy
-  moveSpeed: 8
-  damageDone: 1
-  hitsToDestroy: 1
+  moveSpeed: 12
+  damageDone: 10
+  hitsToDestroy: 5
+  target: {fileID: 0}
+  destroyPositionZ: -50
+  currentHit: 0
 --- !u!54 &6141858111719558796
 Rigidbody:
   m_ObjectHideFlags: 0
