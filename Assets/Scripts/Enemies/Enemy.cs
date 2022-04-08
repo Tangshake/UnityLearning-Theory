@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Move()
     {
         //Move enemy
-        transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector3.back * moveSpeed * Time.deltaTime, Space.World);
     }
 
     protected virtual void Introduction()
