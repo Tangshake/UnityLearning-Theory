@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField]
+    private ParticleSystem hitExplosion;
+
     private float speed = 20.0f;
     private float destroyAtPosZ = 50;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,7 @@ public class Bullet : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+            Instantiate(hitExplosion, transform.position, Quaternion.identity);
         }
     }
 }
