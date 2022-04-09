@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyClonedParticles : MonoBehaviour
 {
     // Update is called once per frame
-    void Update()
+    void Start()
     {
         Invoke("KillMe", 5);
     }
