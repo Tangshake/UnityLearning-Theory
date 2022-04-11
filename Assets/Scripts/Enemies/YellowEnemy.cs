@@ -8,4 +8,13 @@ public class YellowEnemy : Enemy
     {
         Debug.Log($"Hello my name is: Yellow!");
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.AddScore(EnemyScore);
+    }
+
+    protected override int EnemyScore => 2;
+
+
 }

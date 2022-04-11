@@ -22,6 +22,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int destroyPositionZ = -50;
 
+    protected virtual int EnemyScore => 1;
+        
+
     public int currentHit = 0;
 
     private void Awake()

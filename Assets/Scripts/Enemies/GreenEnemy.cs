@@ -8,4 +8,9 @@ public class GreenEnemy : Enemy
     {
         Debug.Log($"Hello my name is: Green!");
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.AddScore(EnemyScore);
+    }
 }

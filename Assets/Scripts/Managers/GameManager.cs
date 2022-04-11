@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Player player;
+
+    [SerializeField]
+    private TMPro.TMP_Text scoreText;
+
+    private int _score;
 
     private void Awake()
     {
@@ -59,5 +65,16 @@ public class GameManager : MonoBehaviour
                 Destroy(enemy);
             }
         }
+    }
+
+    public void AddScore(int value)
+    {
+        _score += value;
+        RefreshScoreText();
+    }
+
+    private void RefreshScoreText()
+    {
+        scoreText.text = _score.ToString();
     }
 }

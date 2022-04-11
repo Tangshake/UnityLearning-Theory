@@ -29,5 +29,11 @@ public class RedEnemy : Enemy
         }
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.AddScore(EnemyScore);
+    }
+
+    protected override int EnemyScore => 3;
 
 }
