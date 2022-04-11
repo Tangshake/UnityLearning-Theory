@@ -23,8 +23,8 @@ public class Player : MonoBehaviour
     private AudioClip _playerHit;
 
     private float moveLimit = 14; //Positive and negative value
-
     private Transform pifpaf;
+    private Vector3 playerStartPosition;
 
     private float horizontalInput;
     private bool isSpacePressed;
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerStartPosition = transform.position;
         pifpaf = GameObject.Find("pifpaf").transform;
 
         healthbar.UpdateHealthBar(maxHealth, health);
@@ -84,6 +85,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void ResetPlayer()
+    {
+        transform.position = playerStartPosition;
+        health = 20;
+        healthbar.UpdateHealthBar(maxHealth, health);
+    }
 
     public int PlayerHealth
     {

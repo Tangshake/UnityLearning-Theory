@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private AudioClip _gameOver;
 
+    private GameObject gameOverObject;
+
     private bool isGameOver;
     private int _score;
 
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         isGameOver = false;
+
+        gameOverObject = GameObject.FindObjectsOfType<GameObject>(true).Where(o => o.name.Equals("GameOver")).FirstOrDefault();
     }
 
     // Update is called once per frame
@@ -50,11 +54,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void RestartGame()
+    {
+        _score = 0;
+        isGameOver = false;
+        player.ResetPlayer();
+        gameOverObject.SetActive(false);
+        spawnManager.StartEnemySpawn();
+        RefreshScoreText();
+    }
+
     private void GameOver()
     {
         ExplodeRemainingBalls();
 
         SoundManager.Instance.PlaySound(_gameOver);
+
+        gameOverObject.SetActive(true);
     }
 
     private void ExplodeRemainingBalls()

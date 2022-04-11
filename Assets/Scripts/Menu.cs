@@ -11,6 +11,11 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
+    public void RestartGame()
+    {
+        GameManager.Instance.RestartGame();
+    }
+
     public void QuitGame()
     {
         #if UNITY_EDITOR
