@@ -293,8 +293,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   health: 20
+  maxHealth: 20
   bullet: {fileID: 4442000345336183669, guid: eed64de19c46f304f8a53613734dcbc0, type: 3}
   healthbar: {fileID: 300734394}
+  _playerHit: {fileID: 8300000, guid: 36a2e471d42447a4a9f20142c4e3452d, type: 3}
 --- !u!54 &289403522
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1137,6 +1139,7 @@ MonoBehaviour:
   spawnManager: {fileID: 1961304691}
   player: {fileID: 289403521}
   scoreText: {fileID: 440123844}
+  _gameOver: {fileID: 8300000, guid: 5ac5fb819678acd4696356932ea8250b, type: 3}
 --- !u!1 &1605735697
 GameObject:
   m_ObjectHideFlags: 0

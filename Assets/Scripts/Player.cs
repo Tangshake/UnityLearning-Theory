@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Healthbar healthbar;
 
+    [SerializeField]
+    private AudioClip _playerHit;
+
     private float moveLimit = 14; //Positive and negative value
 
     private Transform pifpaf;
@@ -76,6 +79,8 @@ public class Player : MonoBehaviour
             
             healthbar.UpdateHealthBar(maxHealth, health);
             Debug.Log($"Current player health is {health}");
+
+            SoundManager.Instance.PlaySound(_playerHit);
         }
     }
 

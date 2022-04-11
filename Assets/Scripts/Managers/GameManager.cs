@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TMPro.TMP_Text scoreText;
 
+    [SerializeField]
+    private AudioClip _gameOver;
+
     private bool isGameOver;
     private int _score;
 
@@ -50,6 +53,8 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         ExplodeRemainingBalls();
+
+        SoundManager.Instance.PlaySound(_gameOver);
     }
 
     private void ExplodeRemainingBalls()
