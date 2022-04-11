@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.PlayerHealth < 0 && !isGameOver)
+        if (player.PlayerHealth <= 0 && !isGameOver)
         {
             isGameOver = true;
 

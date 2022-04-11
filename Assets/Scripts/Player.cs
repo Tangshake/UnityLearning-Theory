@@ -11,7 +11,13 @@ public class Player : MonoBehaviour
     private int health = 20;
 
     [SerializeField]
+    private float maxHealth = 20;
+
+    [SerializeField]
     private GameObject bullet;
+
+    [SerializeField]
+    private Healthbar healthbar;
 
     private float moveLimit = 14; //Positive and negative value
 
@@ -24,6 +30,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         pifpaf = GameObject.Find("pifpaf").transform;
+
+        healthbar.UpdateHealthBar(maxHealth, health);
     }
 
     // Update is called once per frame
@@ -65,7 +73,8 @@ public class Player : MonoBehaviour
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             health -= enemy.damageDone;
-
+            
+            healthbar.UpdateHealthBar(maxHealth, health);
             Debug.Log($"Current player health is {health}");
         }
     }
