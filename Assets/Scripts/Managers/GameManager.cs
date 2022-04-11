@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TMPro.TMP_Text scoreText;
 
+    private bool isGameOver;
     private int _score;
 
     private void Awake()
@@ -28,13 +29,16 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+        isGameOver = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.PlayerHealth < 0)
+        if (player.PlayerHealth < 0 && !isGameOver)
         {
+            isGameOver = true;
+
             //Stop balls to spawn
             spawnManager.StopEnemySpawn();
 

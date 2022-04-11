@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
 
+    private float moveLimit = 14; //Positive and negative value
+
     private Transform pifpaf;
 
     private float horizontalInput;
@@ -39,7 +41,13 @@ public class Player : MonoBehaviour
     {
         transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
 
-        if(isSpacePressed)
+        if (transform.position.x <= -moveLimit)
+            transform.position = new Vector3(-moveLimit, transform.position.y, transform.position.z);
+
+        if(transform.position.x >= moveLimit)
+            transform.position = new Vector3(moveLimit, transform.position.y, transform.position.z);
+
+        if (isSpacePressed)
         {
             Fire();
         }
